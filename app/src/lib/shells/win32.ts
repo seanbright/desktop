@@ -472,7 +472,7 @@ export function launch(
     case Shell.WindowsTerminal:
       const windowsTerminalPath = `"${foundShell.path}"`
       log.info(`launching ${shell} at path: ${windowsTerminalPath}`)
-      return spawn(windowsTerminalPath, ['-d .'], { shell: true, cwd: path })
+      return spawn(windowsTerminalPath, [`-d "${path}"`], { shell: true, cwd: path })
     case Shell.FluentTerminal:
       const fluentTerminalPath = `"${foundShell.path}"`
       log.info(`launching ${shell} at path: ${fluentTerminalPath}`)
